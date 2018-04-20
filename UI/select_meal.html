@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='layout.css' rel='stylesheet' />
+</head>
+<body>
+	<header>
+		<h1 style='display: inline-block'>Book-A-Meal</h1>
+		<div class='menu-div'>
+			<ul>
+				<a href='select_meal.html'><li>Menu</li></a>
+				<a href='set_menu.html'><li>Set Menu</li></a>
+				<a href='manage_meals.html'><li>Manage Meals</li></a>
+				<a href='summary.html'><li>Summary</li></a>
+			</ul>
+		</div>
+	</header>
+	<br>
+	<br>
+	<center><h1 style='color: #5e605e'>Today's Menu</h1></center>
+	<form name='form1'>
+	<table class='menu-table' align='center' width='700px' height='500px'>
+		<tbody>
+			<tr>
+				<td>
+					Special Fried Rice
+					<div class='food-img'><img src='fried_rice_3.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Burger
+					<div class='food-img'><img src='burgers_8.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Noodles
+					<div class='food-img'><img src='noodles.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Salad
+					<div class='food-img'><img src='salad.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Salad
+					<div class='food-img'><img src='salad.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Pancakes
+					<div class='food-img'><img src='pancakes_1.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Spaghetti
+					<div class='food-img'><img src='spaghetti.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Pizza
+					<div class='food-img'><img src='pizza.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Sandwiches
+					<div class='food-img'><img src='sandwich.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Steak
+					<div class='food-img'><img src='steak.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Turkey
+					<div class='food-img'><img src='turkey.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+				<td>
+					Kebabs & Sausages
+					<div class='food-img'><img src='kebabs.jpg'></div>
+					<!-- &#x20a6;1000.00 -->
+					<div class='order-btn'><center>Order</center></div>
+				</td>
+			</tr>
+		</tbody>	
+	</table>
+	</form>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<footer>
+		<h1>Privacy Policy | &copy; Copyright 2018</h1>
+	</footer>
+	<script>
+		function setMenu() {
+			var date = document.getElementById('date').value;
+			var menuArray = [];
+			var menuString = '';
+			//var selectedItems = document.getElementById('');
+
+			for (var i = 0; i < document.getElementsByName('item').length; i++) {
+				if (document.getElementsByName('item')[i].checked) {
+					//console.log(document.getElementsByName('item')[i].value);
+					menuArray.push(document.getElementsByName('item')[i].value);
+					menuString += document.getElementsByName('item')[i].value + ','; 
+				}
+			}
+
+			alert('The menu for ' + date + ' is ' + menuString);
+				//console.log(document.getElementsByName('item')[0].value);
+			//console.log('tobi');
+			//document.write('tobi');
+		}
+		//console.log('tobi');
+	</script>	
+</body>
+</html>
