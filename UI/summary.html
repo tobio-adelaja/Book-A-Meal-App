@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='layout.css' rel='stylesheet' />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 	<header>
-		<h1 style='display: inline-block'>Book-A-Meal</h1>
-		<div class='menu-div'>
+		<h1>Book-A-Meal</h1>
+		<nav>
 			<ul>
 				<a href='select_meal.html'><li>Menu</li></a>
 				<a href='set_menu.html'><li>Set Menu</li></a>
 				<a href='manage_meals.html'><li>Manage Meals</li></a>
 				<a href='summary.html'><li>Summary</li></a>
 			</ul>
-		</div>
+
+			<a href="#" id="menu-icon"><i class="material-icons">menu</i></a>
+		</nav>
 	</header>
 	<br>
 	<center><h2 style='color: #5e605e'>Order Summary</h2></center>
@@ -38,9 +42,6 @@
 	<center><h2 style='color: #5e605e'>Order Details</h2></center>
 	<table id='summary-table' align='center' width='80%'>
 		<thead>
-			<!-- <tr>
-				<th colspan='5'>Order Breakdown</th>
-			</tr> -->
 			<tr>
 				<th>#</th>
 				<th>Phone</th>
@@ -98,8 +99,6 @@
 			</tr>
 		</tbody>
 	</table>
-		<!-- </table> -->
-	</form>
 	<br>
 	<br>
 	<br>
