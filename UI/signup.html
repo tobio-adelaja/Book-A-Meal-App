@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href='css/login_1.css' rel='stylesheet' />
+	<link href='layout.css' rel='stylesheet'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'> -->
+	
+	</style>
 </head>
 <body>
-	<form>
-	<table>
-		<tr>
-			<td>Name</td>
-			<td><input type='text' name='name' required /></td>
-		</tr>
-		<tr>
-			<td>E-mail</td>
-			<td><input type='text' name='email' required /></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td><input type='password' name='pwd1' required password/></td>
-		</tr>
-		<tr>
-			<td>Confirm Password</td>
-			<td><input type='password' name='pwd2' required password/></td>
-		</tr>
-		<tr>
-			<td colspan='2'><center><input type='submit' name='submit' id='submit_btn' value='Sign Up'/></center></td>
-		</tr>
-		<tr>
-			<td colspan='2'><center>Already have an account?<a href='signin.html'> Sign In.</a></center></td>
-		</tr>
-	</table>
-</form>
+	<header>
+		<h1 style='display: inline-block'>Book-A-Meal</h1>
+	</header>
+	<!-- <br><br><br><br> -->
+	<div style='margin:auto; margin-top:0' class='signup-container'>
+		<br>
+		<br>
+		<br>
+		<form>
+			<table align='center' id='signup-form'>
+				<tr>
+					<!-- <td></td> -->
+					<td><center><h2>Get Started! Create a new account.</h2><center></td>
+				</tr>
+				<tr>
+					<!-- <td></td> -->
+					<td>Name<br><input type='text' name='name' required /></td>
+				</tr>
+				<tr>
+					<!-- <td></td> -->
+					<td>Email<br><input type='email' name='email' required /></td>
+				</tr>
+				<tr>
+					<!-- <td></td> -->
+					<td>Password<br><input type='password' name='pwd1' required password/></td>
+				</tr>
+				<tr>
+					<!-- <td></td> -->
+					<td>Confirm Password<br><input type='password' name='pwd2' required password/></td>
+				</tr>
+				<tr>
+					<td colspan='2'><center><input type='submit' name='submit' class='submit-btn' value='Sign Up'/></center></td>
+				</tr>
+				<tr>
+					<td colspan='2'><center>Already have an account?<a href='signin.html'> Sign In.</a></center></td>
+				</tr>
+			</table>
+		</form>
+		<br><br><br><br><br><br><br><br>
+	</div>
+	<footer>
+		<h1>Privacy Policy | &copy; Copyright 2018</h1>
+	</footer>
 	<script>
 	</script>	
 </body>

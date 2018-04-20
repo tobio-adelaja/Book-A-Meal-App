@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+html {
+	position: relative;
+    min-height: 100%;
+    font-family: Dosis
+}
+
+html body {
+	background-color: white;
+	/* background-color: #eaedf2; */
+	margin: 0 auto;
+	padding: 0;
+}
+
+header {
+	width: 75.7%;
+	height: 80px;
+	padding-left: 150px;
+	padding-right: 150px;
+	/*padding-top:5px; */
+	/* padding: 0; */
+	background-color: #f77b0e;
+	color: white;
+}
+
+h1, h3, h4, h5, h6 {
+	width: 200px;
+}
+
+#log-div {
+	height: 75px;
+	width: 100px;
+	float:left;
+}
+
+.menu-div {
+	width: 70%;
+	height:100%;
+	background-color: #f77b0e;
+	float: right;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	/*overflow: hidden;*/
+}
+
+.menu-div ul {
+    margin-top: 0px;
+    height: 100%;
+}
+
+.menu-div li {
+    float: left;
+    height:50px;
+    text-align: center;
+    top:0;
+    padding-left: 18px;
+    padding-right: 18px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+    background-color: #f77b0e;
+    padding-top: 30px;
+    width:100px;
+}
+
+.menu-div li:hover {
+    background-color: green;
+}
+
+.menu-div a {
+	margin-top: 0px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer {
+	width: 87.8%;
+	height: 70px;
+	margin: 0;
+	padding-left: 150px;
+	padding-top:15px;
+	/* padding: 0; */
+    /* left: 0; */
+    bottom: 0;
+	position: absolute;
+	float: bottom;
+	background-color: #195e21;
+	color: white;
+	font-size: 9px;
+}
+
+table {
+	/* background-color:#E5E5E5;*/
+	/* width:100%; border: solid #63BBC8 1px;*/
+	border-spacing: 0;
+    /* border: solid #ccc 1px; */
+    /* -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    /* border-radius: 6px; */
+}
+
+
+
+td {
+	padding: 5px;
+	border: solid #E5E5E5 1px;
+	/* [disabled]font-size:11px; */
+	/*color: white; */
+	/* background-color: #fff; */
+	/*font-family: verdana; */
+	/* font-size:11px; */
+}
+
+
+#signup-form {
+	border: 5px solid white;
+	border-top:5px solid orange;
+	border-radius: 5px; 
+	height: 300px;
+	width: 400px;
+	font-size: 15px;
+	font-weight: normal;
+	border-radius: 10px;
+	/* border-collapse: collapse */
+}
+
+#signup-form td {
+	border: none;
+	background-color: white;
+	border-color: white;
+	height:55px;
+}
+
+#signup-form input {
+	height:30px;
+	width:90%;
+	border-radius: 2.5px;
+	margin-left: 10px;
+	margin-right: 0px;
+	border:1px solid #cccccc;
+	font-size: 14px;
+	padding: 0 8px;
+	border-color: #cccccc;
+}
+
+#signup-form .submit-btn {
+	height: 45px;
+	width: 120px;
+	background-color: #36d148;
+	border: none;
+	border-radius: 8px;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Dosis;
+}
+
+#set-menu-table .submit-btn {
+	height: 45px;
+	width: 120px;
+	background-color: #36d148;
+	border: none;
+	border-radius: 8px;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Dosis;
+}
+
+#main-heading {
+	margin-top: 0;
+}
+
+#summary-table {
+	border: 1px solid #f77b0e;
+	border-radius: 10px; 
+	/* height: 300px; */
+	width: 70%;
+	font-size: 16px;
+	font-weight: normal;
+	border-radius: 3px;
+	/* border-collapse: collapse */
+}
+
+th {
+	color: orange;
+	font-size:16px;
+	font-weight:bold;
+	border-bottom:2px solid #f77b0e;
+	/* padding:5px; */
+	text-align:left;
+	/* font-family: verdana; */
+    background-color:#F8F8F8;
+    padding: 10px 0px 10px 0px;
+    padding-left: 10px;
+}
+
+#summary-table td {
+	height:50px;
+	padding-left: 10px;
+	border: 0.1px solid #eaedeb;
+	color: #5e605e;
+}
+
+#set-menu-table {
+	border: 1px solid #f77b0e;
+	border-radius: 10px; 
+	/* height: 300px; */
+	width: 50%;
+	font-size: 16px;
+	font-weight: normal;
+	border-radius: 3px;
+	/* border-collapse: collapse */
+}
+
+#set-menu-table td {
+	height:30px;
+	padding-left: 5px;
+	border: 0.1px solid #eaedeb;
+	color: #5e605e;
+}
+
+#date {
+	width: 98%;
+}
+
+.signup-container {
+	width: 100%;
+	/* background-image: url("fried_rice_2.jpg"); */
+	background-color: #eaedeb;
+	background-size: 100%;
+}
+
+.signin-container {
+	width: 100%;
+	background-image: url("burgers_4.jpg");
+	background-size: 100%;
+}
+
+.menu-table {
+	border: 1px solid #cccccc;
+	/* font-family: Arial; */
+	/* border-collapse: collapse; */
+	border-radius: 5px;
+	border-spacing: 15px;
+}
+
+.menu-table td {
+	width: 25%;
+	height: 33.33%;
+	border-top: 2px solid orange;
+	/* border: 0px solid none; */
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px #cccccc;
+	padding-bottom: 10px	
+}
+
+.food-img {
+	margin:0;
+	padding:0;
+	float: top;
+	width: 100%;
+	height: 80%;
+	border-radius: 0px;
+	background-color: white;
+}
+
+.menu-table img {
+	max-width:100%;
+	max-height:200%;
+	border-radius: 0px
+}
+
+.menu-table .order-btn {
+	height: 20px;
+	width: 100%;
+	background-color: orange;
+	color: white;
+	float: right;
+	border-radius: 5px;
+	margin: auto;
+	padding: 2px 0px 2px 0px;
+	font-weight: bold
+}
+
+.menu-table .order-btn:hover {
+	background-color: #36d148	
+}
+
+.edit-btn {
+	background-color: #4fa0d6;
+	border-color: #4fa0d6;
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+}
+
+.delete-btn {
+	background-color: #ce2f27;
+	border-color: #ce2f27;
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+}
+
+.add-btn {
+	background-color: #36d148;
+	border-color: #36d148;
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+}
+
+#set-menu-btn {
+	background-color: #f77b0e;
+	border-color: #f77b0e;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	color: white;
+}
+
+.set-menu-checkbox {
+	width:20px;
+	height:20px;
+}
+
+
