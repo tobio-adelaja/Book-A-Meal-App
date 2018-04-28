@@ -1,6 +1,2 @@
-language: node_js
-node_js:
- - "node"
-env:
-- MY_VAR=EverythignIsAwesome
-- NODE_ENV=TEST
+language: node_js # Sets which engine use to build the project
+node_js: "node" # Specifies node version to use "node"="latest"
