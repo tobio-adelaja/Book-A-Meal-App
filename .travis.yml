@@ -1,13 +1,13 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=7b41a0ba8eb70ee1fcc480226e74747da8d200931e72ab25404c3b6dd96ff24b
-language: node_js # Sets which engine use to build the project
-node_js: "stable" # Specifies node version to use "node"="latest"
-
+language: node_js
+node_js:
+  - "stable"
 before_script:
-  - npm install
-
-script: 
- - npm test
-
-after_success: 'npm run coverage'
+  node_js:
+  - "stable"
+script:
+    - npm test
+    - npm run coverage
+after_success: 'npm run coveralls'
