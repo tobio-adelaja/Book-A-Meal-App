@@ -4,6 +4,7 @@
   "description": "app for customer to order meals and caterers to view orders",
   "main": "app.js",
   "scripts": {
+    "build": "babel ./server",
     "test": "mocha --compilers js:babel-core/register server/test/*.js --exit",
     "lint": "eslint /server/*.js",
     "babel-node": "babel-node --presets=env",
