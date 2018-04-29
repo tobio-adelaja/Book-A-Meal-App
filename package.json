@@ -4,12 +4,12 @@
   "description": "app for customer to order meals and caterers to view orders",
   "main": "app.js",
   "scripts": {
-    "test": "nyc mocha --compilers js:babel-core/register server/test/*.js --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --compilers js:babel-core/register server/test/*.js --exit",
     "lint": "eslint /server/*.js",
     "babel-node": "babel-node --presets=env",
     "transpile-es2015": "babel src -d lib",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "coverage": "nyc report --report=text-lcov | coveralls",
+    "coverage": "nyc report --report=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
