@@ -11,6 +11,7 @@ before_script:
 
 script: 
  - mocha --compilers js:babel-core/register "server/test/menuTest.js" --exit
+ - npm run coverage
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  'npm run coveralls'
