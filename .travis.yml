@@ -4,9 +4,6 @@ env:
 language: node_js # Sets which engine use to build the project
 node_js: "stable" # Specifies node version to use "node"="latest"
 
-before_install:
-  - chmod +x build.sh
-
 before_script:
   - npm install
 
