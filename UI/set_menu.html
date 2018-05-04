@@ -1,108 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='style/layout.css' rel='stylesheet'>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='style/layout.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-	<header>
-		<h1>Book-A-Meal</h1>
-		<nav>
-			<ul>
-				<a href='select_meal.html'><li>Menu</li></a>
-				<a href='set_menu.html'><li>Set Menu</li></a>
-				<a href='manage_meals.html'><li>Manage Meals</li></a>
-				<a href='summary.html'><li>Summary</li></a>
-			</ul>
-
-			<a href="#" id="menu-icon"><i class="material-icons">menu</i></a>
-
-			<!-- <select> 
-			    <option value="" selected="selected">Select</option> 
-			    
-			    <option value="/">Home</option> 
-			    <option value="/collections/all">Books</option> 
-			    <option value="/blogs/five-simple-steps-blog">Blog</option> 
-			    <option value="/pages/about-us">About Us</option> 
-			    <option value="/pages/support">Support</option> 
-		  	</select> -->
-		</nav>
-	</header>
-	<br>
-	<center><h2>Select a date and tick the boxes to add items to the menu.</h2></center>
-	<form name='form1'>
-		<table align='center' id='set-menu-table'>
-			<thead>
-				<tr>
-					<th>Date</th>
-					<th colspan='2'><input type='date' name='date' id='date' required /></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Special Fried Rice</td>
-					<td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Special Fried Rice'></center></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Amala & Ewedu Soup</td>
-					<td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Amala & Ewedu Soup'></center></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Plantain & Eggs</td>
-					<td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Plantain & Eggs' id=''></center></td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Spaghetti & Meat Ball Sauce</td>
-					<td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Spaghetti & Meat Ball Sauce' id=''></center></td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>Yam & Egg Sauce</td>
-					<td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Yam & Egg Sauce' id=''></center></td>
-				</tr>
-				<tr>
-					<td colspan='3'><center><input type='submit' name='submit' class='submit-btn' value='Set Menu' onclick='return setMenu()'/></center></td>
-				</tr>
-			</table>
-		</table>
-	</form>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<footer>
-		<h1>Privacy Policy | &copy; Copyright 2018</h1>
-	</footer>		
-	<script>
-		function setMenu() {
-			var date = document.getElementById('date').value;
-			var menuArray = [];
-			var menuString = '';
-			//var selectedItems = document.getElementById('');
-
-			for (var i = 0; i < document.getElementsByName('item').length; i++) {
-				if (document.getElementsByName('item')[i].checked) {
-					//console.log(document.getElementsByName('item')[i].value);
-					menuArray.push(document.getElementsByName('item')[i].value);
-					menuString += document.getElementsByName('item')[i].value + ','; 
-				}
-			}
-
-			alert('The menu for ' + date + ' is ' + menuString);
-				//console.log(document.getElementsByName('item')[0].value);
-			//console.log('tobi');
-			//document.write('tobi');
-		}
-		//console.log('tobi');
-	</script>	
+  <header>
+    <h1>Book-A-Meal</h1>
+    <nav>
+      <ul>
+        <a href='select_meal.html'><li>Menu</li></a>
+        <a href='set_menu.html'><li>Set Menu</li></a>
+        <a href='manage_meals.html'><li>Manage Meals</li></a>
+        <a href='summary.html'><li>Summary</li></a>
+      </ul>
+      <a href="#" id="menu-icon"><i class="material-icons">menu</i></a>
+    </nav>
+  </header>
+  <center><h2 id='main-heading'>Select a date and tick the boxes to add items to the menu.</h2></center>
+  <form name='form1'>
+    <table align='center' id='set-menu-table'>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th colspan='2'><input type='date' name='date' id='date' required /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Special Fried Rice</td>
+          <td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Special Fried Rice'></center></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Amala & Ewedu Soup</td>
+          <td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Amala & Ewedu Soup'></center></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Plantain & Eggs</td>
+          <td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Plantain & Eggs' id=''></center></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Spaghetti & Meat Ball Sauce</td>
+          <td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Spaghetti & Meat Ball Sauce' id=''></center></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Yam & Egg Sauce</td>
+          <td><center><input type='checkbox' class='set-menu-checkbox' name='item' value='Yam & Egg Sauce' id=''></center></td>
+        </tr>
+        <tr>
+          <td colspan='3'><center><input type='submit' name='submit' id='set-menu-btn'></center></td>
+        </tr>
+      </table>
+    </table>
+  </form>
+  <footer>
+    <h1>Privacy Policy | &copy; Copyright 2018</h1>
+  </footer>
 </body>
 </html>

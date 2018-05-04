@@ -1,88 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='style/layout.css' rel='stylesheet'>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='style/layout.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-	<header>
-		<h1>Book-A-Meal</h1>
-		<nav>
-			<ul>
-				<a href='select_meal.html'><li>Menu</li></a>
-				<a href='set_menu.html'><li>Set Menu</li></a>
-				<a href='manage_meals.html'><li>Manage Meals</li></a>
-				<a href='summary.html'><li>Summary</li></a>
-			</ul>
+  <header>
+    <h1>Book-A-Meal</h1>
+    <nav>
+      <ul>
+        <a href='select_meal.html'><li>Menu</li></a>
+        <a href='set_menu.html'><li>Set Menu</li></a>
+        <a href='manage_meals.html'><li>Manage Meals</li></a>
+        <a href='summary.html'><li>Summary</li></a>
+      </ul>
 
-			<a href="#" id="menu-icon"><i class="material-icons">menu</i></a>
-
-			<!-- <select> 
-			    <option value="" selected="selected">Select</option> 
-			    
-			    <option value="/">Home</option> 
-			    <option value="/collections/all">Books</option> 
-			    <option value="/blogs/five-simple-steps-blog">Blog</option> 
-			    <option value="/pages/about-us">About Us</option> 
-			    <option value="/pages/support">Support</option> 
-		  	</select> -->
-		</nav>
-	</header>
-	<!-- <div class='signup-container'> -->
-	<br>
-	<center><h2 style='color: #5e605e'>Available Meals</h2></center>
-	<table id='summary-table' align='center' width='80%' height='80%'>
-		<thead>
-			<!-- <tr>
-				<th colspan='5'>Order Breakdown</th>
-			</tr> -->
-			<tr>
-				<th width='2%'>#</th>
-				<th width='30%'>Meal</th>
-				<th width='10%'>Date Added</th>
-				<th width='5%'>Price (&#x20a6;)</th>
-				<th width='5%'></th>
-				<th width='5%'></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Special Fried Rice</td>
-				<td>01/01/2018</td>
-				<td>1,000.00</td>
-				<td><center><button class='edit-btn'><i class="material-icons">edit</i> Edit</button></center></td>
-				<td><center><button class='delete-btn' onclick='return confirmDelete()'><i class="material-icons">delete</i> Delete</button></center></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>Pancakes</td>
-				<td>05/01/2018</td>
-				<td>2,500.00</td>
-				<td><center><button class='edit-btn'><i class="material-icons">edit</i> Edit</button></center></td>
-				<td><center><button class='delete-btn' onclick='return confirmDelete()'><i class="material-icons">delete</i> Delete</button></center></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Salad</td>
-				<td>08/01/2018</td>
-				<td>700.00</td>
-				<td><center><button class='edit-btn'><i class="material-icons">edit</i> Edit</button></center></td>
-				<td><center><button class='delete-btn' onclick='return confirmDelete()'><i class="material-icons">delete</i> Delete</button></center></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan='5'><button class='add-btn'><i class="material-icons">add</i> Delete</button></center>
-			</tr>
-		</tbody>
-	</table>
-		<!-- </table> -->
-	</form>
-	<!-- </div> -->
-	<br><br><br><br><br><br><br>
-	<footer>
-		<h1>Privacy Policy | &copy; Copyright 2018</h1>
-	</footer>
+      <a href="#" id="menu-icon"><i class="material-icons">menu</i></a>
+    </nav>
+  </header>
+  
+  <center><h2 id='main-heading'>Available Meals</h2></center>
+  <table id='summary-table' align='center' width='80%' height='80%'>
+    <thead>
+      <tr>
+        <th width='2%'>#</th>
+        <th width='30%'>Meal</th>
+        <th width='10%'>Date Added</th>
+        <th width='5%'>Price (&#x20a6;)</th>
+        <th width='5%'></th>
+        <th width='5%'></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Special Fried Rice</td>
+        <td>01/01/2018</td>
+        <td>1,000.00</td>
+        <td><center><button class='edit-btn'><i class="material-icons">edit</i> Edit</button></center></td>
+        <td><center><button class='delete-btn'><i class="material-icons">delete</i> Delete</button></center></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pancakes</td>
+        <td>05/01/2018</td>
+        <td>2,500.00</td>
+        <td><center><button class='edit-btn'><i class="material-icons">edit</i> Edit</button></center></td>
+        <td><center><button class='delete-btn'><i class="material-icons">delete</i> Delete</button></center></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Salad</td>
+        <td>08/01/2018</td>
+        <td>700.00</td>
+        <td><center><button class='edit-btn'><i class="material-icons">edit</i> Edit</button></center></td>
+        <td><center><button class='delete-btn'><i class="material-icons">delete</i> Delete</button></center></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan='5'><button class='add-btn'><i class="material-icons">add</i> Delete</button></center>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+  <footer>
+    <h1>Privacy Policy | &copy; Copyright 2018</h1>
+  </footer>
 </body>
 </html>
