@@ -1,10 +1,8 @@
 import express from 'express';
 
-import bodyParser from 'body-parser';
+import bodyParser from 'body-parser
 
 import routes from './routes/routes';
-
-import menu from './routes/menu';
 
 const app = express();
 app.use(express.json());
