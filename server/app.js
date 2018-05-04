@@ -1,11 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import meals from './routes/meals';
+import routes from './routes/routes';
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.text());
-app.use('/api/v1/meals', meals);
+app.use('/api/v1', routes);
 
 const port = process.env.PORT || 3000;
 app.listen(port);
