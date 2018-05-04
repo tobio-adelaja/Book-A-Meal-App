@@ -1,13 +1,13 @@
-import express from 'express';
+    import express from 'express';
 
 import menuController from '../controllers/menuController';
 
 const router = express.Router();
 
 // GET request for menu
-router.get('/', menuController.getMenu);
+router.get('/menu', menuController.getDailyMenu);
 
 // POST request for menu
-router.post('/', menuController.postMenu);
+router.post('/menu', menuController.setDailyMenu);
 
 export default router;

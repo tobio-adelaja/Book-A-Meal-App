@@ -1,6 +1,7 @@
-const menu = [
+const menus = [
   {
-    date: '24/04/2018',
+    id: 1,
+    date: '2018-04-24',
     meals: [
       { id: 1, name: 'Rice with beef' },
       { id: 2, name: 'Rice with chicken' },
@@ -8,7 +9,8 @@ const menu = [
     ],
   },
   {
-    date: '25/04/2018',
+    id: 2,
+    date: '2018-04-25',
     meals: [
       { id: 1, name: 'Rice with beef' },
       { id: 2, name: 'Rice with chicken' },
@@ -16,7 +18,8 @@ const menu = [
     ],
   },
   {
-    date: '26/04/2018',
+    id: 3,
+    date: '2018-04-26',
     meals: [
       { id: 1, name: 'Rice with beef' },
       { id: 2, name: 'Rice with chicken' },
@@ -25,4 +28,4 @@ const menu = [
   },
 ];
 
-export default menu;
+export default menus;
