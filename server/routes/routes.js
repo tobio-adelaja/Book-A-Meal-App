@@ -1,5 +1,7 @@
 import express from 'express';
 
+import menuController from '../controllers/menuController';
+
 import mealController from '../controllers/mealController';
 
 import orderController from '../controllers/orderController';
@@ -26,5 +28,11 @@ router.put('/meals/:id', mealController.editSingleMeal);
 
 // DELETE request for meals
 router.delete('/meals/:id', mealController.deleteSingleMeal);
+
+// GET request for menu
+router.get('/menu', menuController.getDailyMenu);
+
+// POST request for menu
+router.post('/menu', menuController.setDailyMenu);
 
 export default router;

@@ -1,3 +1,4 @@
 node_modules
+.sequelizerc
 .nyc_output
 coverage
