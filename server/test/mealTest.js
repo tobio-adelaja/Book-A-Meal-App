@@ -25,13 +25,16 @@ describe('Meals', () => {
     it('it should add a new meal', (done) => {
       chai.request(app)
         .post('/api/v1/meals')
+        .send({
+          name: 'Club Sandwich',
+          price: 1000,
+          userId: 2
+        })
         .end((err, res) => {
           res.should.have.status(201);
           res.should.be.json;
           res.should.be.a('object');
           res.body.should.have.property('success');
-          res.body.should.have.property('status');
-          res.body.status.should.equal(201);
           done();
         });
     });
@@ -40,12 +43,26 @@ describe('Meals', () => {
   describe('PUT /meals/:id', () => {
     it('it should update an existing meal', (done) => {
       chai.request(app)
-        .put('/api/v1/meals/1')
+        .put('/api/v1/meals/3')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(202);
           res.should.be.json;
           res.should.be.a('object');
-          res.body.should.have.property('success');
+          res.body.message.should.equal('Meal updated successfully.');
+          done();
+        });
+    });
+  });
+
+  describe('PUT /meals/:id', () => {
+    it('it should should return error message if invalid ID is sent', (done) => {
+      chai.request(app)
+        .put('/api/v1/meals/99')
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.should.be.json;
+          res.should.be.a('object');
+          res.body.message.should.equal('Meal not found.');
           done();
         });
     });
@@ -54,12 +71,26 @@ describe('Meals', () => {
   describe('DELETE /meals/:id', () => {
     it('it should delete an exisiting meal', (done) => {
       chai.request(app)
-        .delete('/api/v1/meals/1')
+        .delete('/api/v1/meals/10')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(202);
           res.should.be.json;
           res.should.be.a('object');
-          res.body.should.have.property('success');
+          res.body.message.should.equal('Meal deleted successfully.');
+          done();
+        });
+    });
+  });
+
+  describe('DELETE /meals/:id', () => {
+    it('it should should return error message if invalid ID is sent', (done) => {
+      chai.request(app)
+        .delete('/api/v1/meals/99')
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.should.be.json;
+          res.should.be.a('object');
+          res.body.message.should.equal('Meal not found.');
           done();
         });
     });

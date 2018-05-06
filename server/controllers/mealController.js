@@ -1,65 +1,87 @@
-import meals from '../models/mealModel';
+import db from '../models/index';
+
+const Meal = db.Meals;
 
 const radix = 10;
 
-class Meal {
+class MealController {
   // Display all available meals
-  getMeals(req, res) {
-    return res.status(200).json({
-      meals,
-    });
+  getAllMeals(req, res) {
+    return Meal
+    .findAll()
+    .then(function(meals) {
+      res.status(200).json({
+        meals
+      });
+    })
+    .catch(function() {
+      return res.status(400).json({
+        message: 'An error occured!'
+      });
+    })
   }
 
-  postMeals(req, res) {
-    const meal = {
-      id: meals.length + 1,
+  addSingleMeal(req, res) {
+    return Meal
+    .create({
       name: req.body.name,
-    };
-
-    meals.push(meal);
-
-    return res.status(201).json({
-      success: {
-        id: meals.length + 1,
-        name: req.body.meal,
-      },
-      status: 201,
-    });
+      price: req.body.price,
+      userId: req.body.userId
+    })
+    .then(function(meal) {
+       res.status(201).json({
+        success: true,
+        meal,
+      });
+    })
+    .catch(function() {
+      return res.status(400).json({
+        message: 'An error occured!'
+      });
+    })
   }
 
   // Update an existing meal
-  putMeals(req, res) {
-    const changedID = req.params.id;
-    const meal = meals.find(c => c.id === parseInt(changedID, radix));
-    if (!meal) {
-      res.status(404).send('The meal with the given ID was not found.');
-    } else {
-      for (let i = 0; i < meals.length; i += 1) {
-        if (meals[i].id === parseInt(changedID, radix)) {
-          meals[i].name = req.body;
-        }
+  editSingleMeal(req, res) {
+    return Meal
+    .findById(req.params.id)
+    .then(function(meal) {
+      if (!meal) {
+        return res.status(404).send({ message: 'Meal not found.' })
       }
-    }
-    return res.status(200).json({ success: 'Meal updated successfully', status: 200 });
+
+      return meal
+      .update({
+        name: req.body.name,
+        price: req.body.price,
+        userId: req.body.userId
+      })
+      .then( () => { res.status(202).send({message: 'Meal updated successfully.'}) } )
+    })
+    .catch(function(error) {
+      return res.status(400).send(error);
+    })
   }
 
   // Delete an existing meal
-  deleteMeals(req, res) {
-    const changedID = req.params.id;
-    const meal = meals.find(c => c.id === parseInt(changedID, radix));
-    if (!meal) {
-      res.status(404).send('The meal with the given ID was not found.');
-    } else {
-      for (let i = 0; i < meals.length; i += 1) {
-        if (meals[i].id === parseInt(changedID, radix)) {
-          meals.splice(i, 1);
-        }
+  deleteSingleMeal(req, res) {
+    return Meal
+    .findById(req.params.id)
+    .then(function(meal) {
+      if (!meal) {
+        return res.status(404).send({ message: 'Meal not found.' })
       }
-    }
-    return res.status(200).json({ success: 'Meal deleted successfully', status: 200 });
+
+      return meal
+      .destroy()
+      .then( () => { res.status(202).send({message: 'Meal deleted successfully.'}) } )
+    })
+    .catch(function(error) {
+      return res.status(400).send(error);
+    })
   }
 }
 
-const mealController = new Meal();
+const mealController = new MealController();
 
 export default mealController;
