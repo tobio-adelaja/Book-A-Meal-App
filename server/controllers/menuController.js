@@ -8,10 +8,10 @@ class MenuController {
   // Display all available meals
   getDailyMenu(req, res) {
     return Menu
-    .findAll()
+    .findOne({where: { date: req.headers.date } })
     .then(function(menus) {
       res.status(200).json({
-        menus
+        menu
       });
     })
     .catch(function() {
