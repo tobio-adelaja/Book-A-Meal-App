@@ -18,7 +18,7 @@ router.post('/signup', userController.addSingleUser);
 // POST request for users
 router.post('/signin', userController.authenticate);
 
-//router.use(check.authenticate);
+router.use(check.authenticate);
 //router.use(check.authorize);
 
 // GET request for users
