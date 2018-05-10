@@ -12,12 +12,8 @@ export default function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNul: false,
     },
-    handle: {
-      type: DataTypes.STRING,
-      allowNul: false,
-    },
-    role: {
-      type: DataTypes.ENUM('Customer', 'Caterer'),
+    admin: {
+      type: DataTypes.BOOLEAN,
       allowNul: false,
     },
   });

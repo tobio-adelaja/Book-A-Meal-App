@@ -32,8 +32,7 @@ class UserController {
             fullName: req.body.fullName,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
-            handle: req.body.handle,
-            role: req.body.role,
+            admin: req.body.admin,
           })
           .then((newUser) => {
             const payload = {
@@ -99,8 +98,6 @@ class UserController {
             fullName: req.body.fullName,
             email: req.body.email,
             password: req.body.password,
-            handle: req.body.handle,
-            role: req.body.role,
           })
           .then(res.status(201).send({ message: 'User modified successfully.' }));
       })

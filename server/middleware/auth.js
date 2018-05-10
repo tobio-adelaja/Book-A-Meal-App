@@ -24,7 +24,7 @@ const check = {
     }
   },
   authorize: (req, res, next) => {
-    if (req.decoded && req.decoded.user.role === 'Caterer') {
+    if (req.decoded && req.decoded.user.admin === true) {
       return next();
     }
     return res.status(401).send({ message: 'You are not authorized to view this page.' });

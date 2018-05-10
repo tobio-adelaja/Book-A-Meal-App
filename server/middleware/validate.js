@@ -27,8 +27,7 @@ const validateCreateUser = Validate({
     fullName: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string().required(),
-    handle: Joi.string().required(),
-    role: Joi.string().required(),
+    admin: Joi.boolean().required(),
   },
 });
 
