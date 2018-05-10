@@ -1,60 +1,78 @@
 import express from 'express';
 
-import userController from '../controllers/userController';
+import UserController from '../controllers/userController';
 
-import menuController from '../controllers/menuController';
+import MenuController from '../controllers/menuController';
 
-import mealController from '../controllers/mealController';
+import MealController from '../controllers/mealController';
 
-import orderController from '../controllers/orderController';
+import OrderController from '../controllers/orderController';
 
-import check from '../middleware/auth.js'
+import check from '../middleware/auth';
+
+import Validate from '../middleware/validate';
 
 const router = express.Router();
 
 // POST request for users
-router.post('/signup', userController.addSingleUser);
+router.post('/auth/signup', Validate.validateCreateUser, UserController.addSingleUser);
 
 // POST request for users
-router.post('/signin', userController.authenticate);
+router.post('/auth/login', Validate.validateSignIn, UserController.authenticate);
 
 router.use(check.authenticate);
-//router.use(check.authorize);
+// router.use(check.authorize);
 
 // GET request for users
-router.get('/users', check.authorize, userController.getAllUsers);
+router.get('/users', check.authorize, UserController.getAllUsers);
 
 // PUT request for users
-router.put('/users/:id', userController.editSingleUser);
+router.put('/users/:id', Validate.validateEditDeleteUser, Validate.validateCreateUser, UserController.editSingleUser);
 
 // DELETE request for users
-router.delete('/users/:id', userController.deleteSingleUser);
+router.delete('/users/:id', Validate.validateEditDeleteUser, UserController.deleteSingleUser);
 
 // GET request for order
-router.get('/orders', orderController.getAllOrders);
+router.get('/orders', check.authorize, OrderController.getAllOrders);
 
 // POST request for order
-router.post('/orders', orderController.addSingleOrder);
+router.post('/orders', Validate.validateCreateOrder, OrderController.addSingleOrder);
 
 // PUT request for order
-router.put('/orders/:id', orderController.editSingleOrder);
+router.put('/orders/:id', Validate.validateEditDeleteOrder, Validate.validateCreateOrder, OrderController.editSingleOrder);
 
 // GET request for meals
-router.get('/meals', mealController.getAllMeals);
+router.get('/meals', check.authorize, MealController.getAllMeals);
 
 // POST request for meals
-router.post('/meals', mealController.addSingleMeal);
+router.post('/meals', check.authorize, Validate.validateCreateMeal, MealController.addSingleMeal);
 
 // PUT request for meals
-router.put('/meals/:id', mealController.editSingleMeal);
+router.put('/meals/:id', check.authorize, Validate.validateEditDeleteMeal, Validate.validateCreateMeal, MealController.editSingleMeal);
 
 // DELETE request for meals
-router.delete('/meals/:id', mealController.deleteSingleMeal);
+router.delete('/meals/:id', check.authorize, Validate.validateEditDeleteMeal, MealController.deleteSingleMeal);
 
 // GET request for menu
-router.get('/menu', menuController.getDailyMenu);
+router.get('/menu', MenuController.getDailyMenu);
 
 // POST request for menu
-router.post('/menu', menuController.setDailyMenu);
+router.post('/menu', check.authorize, Validate.validateSetMenu, MenuController.setDailyMenu);
+
+router.use((err, req, res, next) => {
+  // console.log(err.errors[0].field[0]);
+  let resString = '"errors": [ ';
+  for (let counter = 0; counter < err.errors.length; counter += 1) {
+    resString += '{ "field": "' + err.errors[counter].field[0] + '", "message": "' +  err.errors[counter].messages[0] + '" },';
+  }
+  resString += ' ]';
+  res.status(400).json({ resString });
+  /* res.status(400).json({
+    error: {
+      fields: errors.error.field,
+      messages: errors.error.messages
+    }
+  }); */
+});
 
 export default router;

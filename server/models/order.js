@@ -1,27 +1,21 @@
-'use strict';
-
-module.exports = (sequelize, DataTypes) => {
-  var Order = sequelize.define('Orders', {
+export default function (sequelize, DataTypes) {
+  const Order = sequelize.define('Orders', {
     date: {
-        type: DataTypes.DATE,
-        allowNul: false        
-    },
-    mealId: {
-        type: DataTypes.INTEGER,
-        allowNul: false       
-    },
-    quantity: {
-        type: DataTypes.INTEGER,
-        allowNul: false       
+      type: DataTypes.STRING,
+      allowNul: false,
     },
     userId: {
-        type: DataTypes.STRING,
-        allowNul: false
-    }
+      type: DataTypes.INTEGER,
+      allowNul: false,
+    },
+    deliveryAddress: {
+      type: DataTypes.STRING,
+      allowNul: false,
+    },
+    expiresAt: {
+      type: DataTypes.DATE,
+      allowNul: false,
+    },
   });
-
-  Order.associate = function(models) {
-    // associations can be defined here
-  };
   return Order;
-};
+}

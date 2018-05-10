@@ -1,14 +1,13 @@
 export default function (sequelize, DataTypes) {
-  const Menu = sequelize.define('Menus', {
-    date: {
-      type: DataTypes.STRING,
+  const OrderMeal = sequelize.define('OrderMeals', {
+    orderId: {
+      type: DataTypes.INTEGER,
       allowNul: false,
-      unique: true,
     },
-    userId: {
+    mealId: {
       type: DataTypes.INTEGER,
       allowNul: false,
     },
   });
-  return Menu;
+  return OrderMeal;
 }
