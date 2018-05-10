@@ -10,6 +10,10 @@
     "babel-node": "babel-node --presets=env",
     "transpile-es2015": "babel src -d lib"
   },
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tobio-adelaja/Book-A-Meal-App.git"
@@ -42,6 +46,7 @@
     "moment": "^2.22.1",
     "nodemon": "^1.17.4",
     "pg": "^7.4.3",
+    "morgan": "^1.9.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.6"
   },
@@ -56,7 +61,6 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "generate-babelrc": "^0.1.2",
-    "morgan": "^1.9.0",
     "server": "^1.0.18"
   }
 }
