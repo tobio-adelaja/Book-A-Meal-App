@@ -8,10 +8,6 @@ export default function (sequelize, DataTypes) {
       type: DataTypes.DECIMAL,
       allowNul: false,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNul: false,
-    },
   });
   return Meal;
 }

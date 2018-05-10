@@ -30,7 +30,6 @@ class MealController {
           .create({
             name: req.body.name.trim(),
             price: req.body.price,
-            userId: req.body.userId,
           })
           .then((newMeal) => {
             res.status(201).json({
@@ -56,7 +55,6 @@ class MealController {
           .update({
             name: req.body.name.trim(),
             price: req.body.price,
-            userId: req.body.userId,
           })
           .then(updatedMeal => res.status(201).send({
             message: 'Meal updated successfully.',
@@ -82,7 +80,5 @@ class MealController {
       .catch(err => res.status(400).json({ message: err.message }));
   }
 }
-
-// const mealController = new MealController();
 
 export default MealController;

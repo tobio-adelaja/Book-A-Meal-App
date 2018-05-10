@@ -63,16 +63,10 @@ router.use((err, req, res, next) => {
   // console.log(err.errors[0].field[0]);
   let resString = '"errors": [ ';
   for (let counter = 0; counter < err.errors.length; counter += 1) {
-    resString += '{ "field": "' + err.errors[counter].field[0] + '", "message": "' +  err.errors[counter].messages[0] + '" },';
+    resString += `{ "field": "${err.errors[counter].field[0]}", "message": "${err.errors[counter].messages[0]}" },`;
   }
   resString += ' ]';
   res.status(400).json({ resString });
-  /* res.status(400).json({
-    error: {
-      fields: errors.error.field,
-      messages: errors.error.messages
-    }
-  }); */
 });
 
 export default router;

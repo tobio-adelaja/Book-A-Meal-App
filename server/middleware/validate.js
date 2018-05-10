@@ -13,7 +13,6 @@ const validateCreateMeal = Validate({
   body: {
     name: Joi.string().required(),
     price: Joi.number().required(),
-    userId: Joi.number().required(),
   },
 });
 

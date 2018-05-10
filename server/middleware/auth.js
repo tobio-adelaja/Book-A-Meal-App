@@ -24,11 +24,9 @@ const check = {
     }
   },
   authorize: (req, res, next) => {
-    // const token = req.query.token || req.body.token || req.headers.token;
     if (req.decoded && req.decoded.user.role === 'Caterer') {
       return next();
     }
-    // console.log(req.decoded.user.admin);
     return res.status(401).send({ message: 'You are not authorized to view this page.' });
   },
 };

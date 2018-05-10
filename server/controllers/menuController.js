@@ -20,19 +20,15 @@ class MenuController {
 
   // Display the menu for a specific day
   static setDailyMenu(req, res) {
-    // const requestDate = `${req.params.year}-${req.params.month}-${req.params.day} 00:00:00`;
     const requestDate = new Date().toDateString();
     return Menu
       .create({
-        // date: moment(requestDate).add(1, 'hour').calender(),
         date: requestDate,
         userId: req.body.userId,
       })
       .then((menu) => {
-        // console.log(order.dataValues.id);
         const mealCount = req.body.meals.length;
         for (let counter = 0; counter < mealCount; counter += 1) {
-          // console.log(order.dataValues.id);
           MenuMeal
             .create({
               menuId: menu.dataValues.id,

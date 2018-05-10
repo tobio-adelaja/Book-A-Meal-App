@@ -40,5 +40,6 @@ module.exports = {
       },
     });
   },
-  down: (queryInterface) => { return queryInterface.dropTable('Orders'); },
+  down: (queryInterface) => { return queryInterface.dropTable('Orders');
+  },
 };
