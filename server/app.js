@@ -6,10 +6,13 @@ import morgan from 'morgan';
 
 import routes from './routes/routes';
 
+require('dotenv').config();
+
+
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: true,
 }));
 app.use(bodyParser.text());
 app.use(morgan('dev'));

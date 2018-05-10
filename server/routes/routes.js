@@ -14,6 +14,8 @@ import Validate from '../middleware/validate';
 
 const router = express.Router();
 
+router.get('/', (req, res) => { return res.send('Welcome to the Book-A-Meal app!'); });
+
 // POST request for users
 router.post('/auth/signup', Validate.validateCreateUser, UserController.addSingleUser);
 
@@ -60,13 +62,16 @@ router.get('/menu', MenuController.getDailyMenu);
 router.post('/menu', check.authorize, Validate.validateSetMenu, MenuController.setDailyMenu);
 
 router.use((err, req, res, next) => {
-  // console.log(err.errors[0].field[0]);
-  let resString = '"errors": [ ';
-  for (let counter = 0; counter < err.errors.length; counter += 1) {
-    resString += `{ "field": "${err.errors[counter].field[0]}", "message": "${err.errors[counter].messages[0]}" },`;
+  if (err) {
+    let resString = '"errors": [ ';
+    for (let counter = 0; counter < err.errors.length; counter += 1) {
+      resString += `{ "field": "${err.errors[counter].field[0]}", "message": "${err.errors[counter].messages[0]}" },`;
+    }
+    resString += ' ]';
+    res.status(400).json({ resString });
+  } else {
+    next();
   }
-  resString += ' ]';
-  res.status(400).json({ resString });
 });
 
 export default router;
