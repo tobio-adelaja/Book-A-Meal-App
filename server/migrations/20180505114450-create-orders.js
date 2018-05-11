@@ -8,7 +8,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       date: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       userId: {
@@ -24,11 +24,6 @@ module.exports = {
       deliveryAddress: {
         type: Sequelize.STRING,
         allowNull: false,
-      },
-      expiresAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: Sequelize.NOW,
       },
       createdAt: {
         allowNull: false,

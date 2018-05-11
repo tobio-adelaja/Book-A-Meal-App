@@ -8,18 +8,8 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       date: {
+        allowNull: false,
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Users',
-          onDelete: 'CASCADE',
-          key: 'id',
-          as: 'userId',
-        },
       },
       createdAt: {
         allowNull: false,

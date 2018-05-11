@@ -5,10 +5,12 @@ export default function (sequelize, DataTypes) {
       allowNul: false,
       unique: true,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNul: false,
-    },
   });
+
+  Menu.associate = (models) => {
+    // Meal.belongsToMany(models.Menus, { through: models.MenuMeals });
+    Menu.belongsToMany(models.Meals, { as: 'meals', through: models.MenuMeals, foreignKey: 'menuId' });
+  };
+
   return Menu;
 }

@@ -18,13 +18,13 @@ const check = {
           });
         }
         req.decoded = decoded;
-        next();
-        return decoded;
+        return next();
       });
     }
   },
   authorize: (req, res, next) => {
-    if (req.decoded && req.decoded.user.admin === true) {
+    //console.log(req.decoded);
+    if (req.decoded && req.decoded.newUser.admin === true) {
       return next();
     }
     return res.status(401).send({ message: 'You are not authorized to view this page.' });

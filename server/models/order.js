@@ -1,7 +1,7 @@
 export default function (sequelize, DataTypes) {
   const Order = sequelize.define('Orders', {
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNul: false,
     },
     userId: {
@@ -12,10 +12,12 @@ export default function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNul: false,
     },
-    expiresAt: {
-      type: DataTypes.DATE,
-      allowNul: false,
-    },
   });
+
+  Order.associate = (models) => {
+    // Meal.belongsToMany(models.Menus, { through: models.MenuMeals });
+    Order.belongsToMany(models.Meals, { as: 'meals', through: models.OrderMeals, foreignKey: 'orderId' });
+  };
+
   return Order;
 }

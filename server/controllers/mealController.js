@@ -24,7 +24,7 @@ class MealController {
       .findOne({ where: sequelize.where(sequelize.fn('upper', sequelize.col('name')), req.body.name.toUpperCase().trim()) })
       .then((meal) => {
         if (meal) {
-          return res.status(400).json({ message: 'Cannot add 2 meals with the same name.' });
+          return res.status(400).json({ message: 'A meal already exists with the same name. Please use a different meal name.' });
         }
         return Meal
           .create({
@@ -39,7 +39,7 @@ class MealController {
           })
           .catch(err => res.status(400).json({ message: err.message }));
       })
-      .catch(() => res.status(500).json({ message: 'Internal Server Error' }));
+      .catch(err => res.status(500).json({ message: err.message }));
   }
 
   // Update an existing meal

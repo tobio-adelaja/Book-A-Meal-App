@@ -7,24 +7,26 @@ class OrderController {
   // Display all orders
   static getAllOrders(req, res) {
     return Order
-      .findAll()
+      .findAll({
+        include: [{ all: true }],
+      })
       .then((orders) => {
         if (orders.length === 0) {
           return res.status(404).json({ message: 'No orders available' });
         }
         return res.status(200).json({ orders });
       })
-      .catch(() => res.status(500).json({ message: 'Internal Server Error' }));
+      .catch(err => res.status(500).json({ message: err.message }));
   }
 
   // Add a single order
   static addSingleOrder(req, res) {
+    const requestDate = new Date();
     return Order
       .create({
-        date: req.body.date,
+        date: requestDate,
         userId: req.body.userId,
         deliveryAddress: req.body.deliveryAddress,
-        expiresAt: req.body.expiresAt,
       })
       .then((order) => {
         const mealCount = req.body.meals.length;
@@ -45,7 +47,7 @@ class OrderController {
           order,
         });
       })
-      .catch(() => res.status(500).json({ message: 'Internal Server Error' }));
+      .catch(err => res.status(500).json({ message: err.message }));
   }
 
   // Update an existing meal
@@ -84,7 +86,7 @@ class OrderController {
               });
           });
       })
-      .catch(() => res.status(500).json({ message: 'Internal Server Error' }));
+      .catch(err => res.status(500).json({ message: err.message }));
   }
 }
 

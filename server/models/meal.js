@@ -9,5 +9,13 @@ export default function (sequelize, DataTypes) {
       allowNul: false,
     },
   });
+
+  Meal.associate = (models) => {
+    // Meal.belongsToMany(models.Menus, { through: models.MenuMeals });
+    Meal.belongsToMany(models.Menus, { through: models.MenuMeals, foreignKey: 'mealId' });
+
+    Meal.belongsToMany(models.Orders, { through: models.OrderMeals, foreignKey: 'mealId' });
+  };
+
   return Meal;
 }
